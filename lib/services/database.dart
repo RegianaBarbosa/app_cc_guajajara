@@ -3,9 +3,9 @@ import 'package:path/path.dart';
 
 class DatabaseHelper {
   //Nome do banco de dados
-  static final _databaseName = "ptbr_cc_app_databade.db";
+  static const _databaseName = "cc_app_databade.db";
   //Versão do banco
-  static final _databaseVersion = 1;
+  static const _databaseVersion = 1;
 
   //Singleton padrão: garante que haja apenas 1 instância dessa classe
   static final DatabaseHelper instance = DatabaseHelper._private();

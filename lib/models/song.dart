@@ -30,7 +30,7 @@ class Song {
     final versesGj = _parseVerses(json['text_gj']) ?? [];
 
     final authors = (json['authors'] as List)
-            ?.map((authorJson) => Author.fromJson(authorJson))
+            .map((authorJson) => Author.fromJson(authorJson))
             .toList() ??
         [];
 
