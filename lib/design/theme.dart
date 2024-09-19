@@ -38,7 +38,7 @@ class AppTheme {
         bodyMedium: TextStyle(color: AppColors.marromClaro),
       ),
       buttonTheme: const ButtonThemeData(
-        buttonColor: AppColors.verdeEscuro,
+        buttonColor: AppColors.cinzaClaro,
         textTheme: ButtonTextTheme.primary,
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(

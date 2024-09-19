@@ -6,7 +6,22 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Cantor Cristão")),
+      appBar: AppBar(
+        title: Text("Cantor Cristão"),
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: Icon(
+                Icons.menu,
+                color: AppColors.cinzaClaro,
+              ),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            );
+          },
+        ),
+      ),
       drawer: MyDrawer(),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
@@ -16,17 +31,26 @@ class HomePage extends StatelessWidget {
             // Hinários Section
             Text(
               "Hinários",
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.marromClaro),
             ),
             SizedBox(height: 8),
             Row(
               children: [
                 Expanded(
-                  child: HinarioCard(title: "Português"),
+                  child: HinarioCard(
+                    title: "Português",
+                    icon: Icons.book,
+                  ),
                 ),
                 SizedBox(width: 16),
                 Expanded(
-                  child: HinarioCard(title: "Guajajara"),
+                  child: HinarioCard(
+                    title: "Guajajara",
+                    icon: Icons.book,
+                  ),
                 ),
               ],
             ),
@@ -40,11 +64,17 @@ class HomePage extends StatelessWidget {
             Row(
               children: [
                 Expanded(
-                  child: HinarioCard(title: "Português"),
+                  child: HinarioCard(
+                    title: "Português",
+                    icon: Icons.favorite,
+                  ),
                 ),
                 SizedBox(width: 16),
                 Expanded(
-                  child: HinarioCard(title: "Guajajara"),
+                  child: HinarioCard(
+                    title: "Guajajara",
+                    icon: Icons.favorite,
+                  ),
                 ),
               ],
             ),
@@ -57,8 +87,9 @@ class HomePage extends StatelessWidget {
 
 class HinarioCard extends StatelessWidget {
   final String title;
+  final IconData icon;
 
-  const HinarioCard({required this.title});
+  const HinarioCard({required this.title, required this.icon});
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +101,7 @@ class HinarioCard extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(Icons.book, size: 40, color: AppColors.verdeEscuro),
+            Icon(icon, size: 40, color: AppColors.verdeEscuro),
             SizedBox(height: 8),
             Text(
               title,

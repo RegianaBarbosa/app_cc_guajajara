@@ -15,28 +15,27 @@ class MyDrawer extends StatelessWidget {
             child: Column(
               children: [
                 Image.asset(
-                  'assets/logo.png',
-                  height: 80,
-                  width: 80,
+                  'assets/img/logo-green.png',
+                  height: 130,
+                  width: 200,
                 ),
               ],
             ),
           ),
           // Section 1: Hinários
           ListTile(
-            title: Text('Hinários'),
+            title: Text('Idiomas'),
           ),
-          Divider(),
           // Language Options for Hinários
           ListTile(
-            leading: Icon(Icons.language),
+            leading: Icon(Icons.book),
             title: Text('Português'),
             onTap: () {
               // Handle Português navigation here
             },
           ),
           ListTile(
-            leading: Icon(Icons.language),
+            leading: Icon(Icons.book),
             title: Text('Guajajara'),
             onTap: () {
               // Handle Guajajara navigation here
@@ -47,17 +46,16 @@ class MyDrawer extends StatelessWidget {
           ListTile(
             title: Text('Favoritos'),
           ),
-          Divider(),
           // Language Options for Favoritos
           ListTile(
-            leading: Icon(Icons.language),
+            leading: Icon(Icons.favorite),
             title: Text('Português'),
             onTap: () {
               // Handle Português navigation here
             },
           ),
           ListTile(
-            leading: Icon(Icons.language),
+            leading: Icon(Icons.favorite),
             title: Text('Guajajara'),
             onTap: () {
               // Handle Guajajara navigation here
