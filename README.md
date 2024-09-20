@@ -1,16 +1,64 @@
-# app_cantor_cristao_guajajara
+# **Cantor Cristão Guajajara** App
 
-A new Flutter project.
+**Louve em qualquer lugar, na sua língua.**
 
-## Getting Started
+Leve a adoração aonde você for! Com nosso app, você tem acesso às letras dos hinos do Cantor Cristão em português e guajajara, permitindo que todos louvem na sua língua.
 
-This project is a starting point for a Flutter application.
+**Recursos:**
 
-A few resources to get you started if this is your first Flutter project:
+- **Hinário bilíngue:** Disponível em português e guajajara.
+- **Busca fácil:** Localize rapidamente seus hinos preferidos por título ou número.
+- **Favoritos personalizados:** Salve seus hinos favoritos e tenha fácil acesso a eles a qualquer momento.
+- **Interface intuitiva:** Navegação simples e agradável.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Funcionalidades
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Listar todos os hinos do cantor cristão (pt-br e gj);
+- Visualizar a letra de um hino;
+- Buscar hino por título ou número do hino (id);
+- Favoritar hino;
+- Ajustar tamanho da letra;
+
+
+## Como rodar o app no seu computador
+
+### Pré-requisitos
+
+
+- Flutter SDK instalado (versão 2.0 ou superior). [Instalação do Flutter](https://flutter.dev/docs/get-started/install)
+- Android Studio ou VSCode com os plugins Flutter e Dart. [Configuração do Android Studio](https://flutter.dev/docs/get-started/editor?tab=androidstudio) | [Configuração do VSCode](https://flutter.dev/docs/get-started/editor?tab=vs-code)
+- Emulador Android ou dispositivo físico. [Configuração do Emulador](https://flutter.dev/docs/get-started/install/windows#android-setup)
+
+Verifique se o ambiente está configurado corretamente executando o seguinte comando no terminal:
+  ```bash
+  flutter doctor
+   ```
+Este comando mostrará o status das dependências do Flutter, verificando se todos os componentes necessários estão instalados e configurados corretamente.
+
+
+
+### Passo a passo
+
+1. Clone este repositório:
+   ```bash
+   git clone https://github.com/RegianaBarbosa/app_cc_guajajara.git
+   ```
+   
+2. Acesse o diretório do projeto:
+   ```bash
+   cd app_cc_guajajara
+   ```
+
+3. Instale as dependências:
+   ```bash
+   flutter pub get
+   ```
+
+4. Inicie o emulador ou conecte um dispositivo físico.
+
+5. Execute o aplicativo:
+   ```bash
+   flutter run
+   ```
+
+Para mais informações sobre Flutter, consulte a [documentação oficial](https://flutter.dev/docs).
