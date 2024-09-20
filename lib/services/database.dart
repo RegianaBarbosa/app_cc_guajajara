@@ -3,9 +3,9 @@ import 'package:path/path.dart';
 
 class DatabaseHelper {
   //Nome do banco de dados
-  static final _databaseName = "cantor_c_gj_databade.db";
+  static const _databaseName = "cc_app_databade.db";
   //Versão do banco
-  static final _databaseVersion = 1;
+  static const _databaseVersion = 1;
 
   //Singleton padrão: garante que haja apenas 1 instância dessa classe
   static final DatabaseHelper instance = DatabaseHelper._private();
@@ -40,49 +40,53 @@ class DatabaseHelper {
 
   //Criar tabelas
   Future _onCreate(Database db, int version) async {
-    await db.execute(
-      '''
-      CREATE TABLE hinos (
+    await db.execute('''
+      CREATE TABLE songs (
           id INTEGER PRIMARY KEY,
-          titulo_ptbr TEXT
+          numberSong TEXT,
+          title TEXT,
+          title_gj TEXT,
+          lyrics TEXT,
+          lyrics_gj TEXT,
+          verse_order TEXT
       ),
 
-      CREATE TABLE autores (
+      CREATE TABLE authors (
           id INTEGER PRIMARY KEY AUTOINCREMENT,
-          nome TEXT
+          name TEXT
       ),
 
-      CREATE TABLE hinos_autores (
-          hino_id INTEGER,
-          autor_id INTEGER,
-          PRIMARY KEY (hino_id, autor_id),
-          FOREIGN KEY (hino_id) REFERENCES hinos(id),
-          FOREIGN KEY (autor_id) REFERENCES autores(id)
+      CREATE TABLE songs_authors (
+          song_id INTEGER,
+          author_id INTEGER,
+          PRIMARY KEY (song_id, author_id),
+          FOREIGN KEY (song_id) REFERENCES songs(id),
+          FOREIGN KEY (autor_id) REFERENCES authors(id)
       ),
 
-      CREATE TABLE versos (
+      CREATE TABLE verses (
           id INTEGER PRIMARY KEY AUTOINCREMENT,
-          hino_id INTEGER,
-          ordem INTEGER,
-          texto TEXT,
-          FOREIGN KEY (hino_id) REFERENCES hinos(id),
+          song_id INTEGER,
+          name TEXT,
+          text TEXT,
+          text_gj TEXT,
+          FOREIGN KEY (song_id) REFERENCES songs(id),
       ),
 
-      CREATE TABLE favoritos (
+      CREATE TABLE favorites (
           id INTEGER PRIMARY KEY AUTOINCREMENT,
-          hino_id INTEGER,
-          FOREIGN KEY (hino_id) REFERENCES hinos(id),
+          song_id INTEGER,
+          FOREIGN KEY (song_id) REFERENCES songs(id),
       ),
       
       CREATE TABLE config (
           id INTEGER PRIMARY KEY AUTOINCREMENT,
-          idioma TEXT,
-          tema TEXT,
-          tam_font_titulo INTEGER,
-          tam_font_hino INTEGER,
-          espacamento_linhas INTEGER
+          lang TEXT,
+          theme TEXT,
+          size_font_titulo INTEGER,
+          size_font_hino INTEGER,
+          alin_text INTEGER
       )
-      '''
-    );
+      ''');
   }
 }
