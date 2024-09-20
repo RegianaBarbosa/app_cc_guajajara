@@ -1,4 +1,4 @@
-# **Cantor Cristão Guajajara** App
+# 📖🎵**Cantor Cristão Guajajara App**
 
 **Louve em qualquer lugar, na sua língua.**
 
